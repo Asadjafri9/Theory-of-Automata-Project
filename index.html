@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Turing Machine String Reverser</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div id="welcomeAnimation" class="welcome-animation">
+    <div class="welcome-content">
+      <div class="title-animation">
+        <i class="fas fa-robot"></i>
+        <h1>Turing Machine</h1>
+      </div>
+      <div class="subtitle-animation">
+        <h2>String Reverser</h2>
+      </div>
+      <div class="description-animation">
+        <p>Watch as the machine reverses your string step by step</p>
+      </div>
+      <div class="tape-animation">
+        <div class="tape-cell">a</div>
+        <div class="tape-cell">b</div>
+        <div class="tape-cell">a</div>
+        <div class="tape-cell">b</div>
+      </div>
+      <button id="startButton" class="start-button">
+        <span>Begin</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+      <div class="group-info">
+        <h3>Group Members</h3>
+        <div class="members-list">
+          <div class="member">
+            <i class="fas fa-user"></i>
+            <span>Asad Jafri</span>
+            <span class="roll-no">23k-0016</span>
+          </div>
+          <div class="member">
+            <i class="fas fa-user"></i>
+            <span>Taha Ashraf</span>
+            <span class="roll-no">23k-0697</span>
+          </div>
+          <div class="member">
+            <i class="fas fa-user"></i>
+            <span>Asad ur Rehman</span>
+            <span class="roll-no">23k-0902</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="mainInterface" class="container" style="display: none;">
+    <div class="group-info-small">
+      <span>Group Members: Asad Jafri (23k-0016), Taha Ashraf (23k-0697), Asad ur Rehman (23k-0902)</span>
+    </div>
+    <h1><i class="fas fa-robot"></i> Turing Machine String Reverser</h1>
+    <div class="input-group">
+      <input type="text" id="inputString" placeholder="Enter string with a and b only..." />
+      <button onclick="startTuringMachine()">
+        <i class="fas fa-play"></i> Reverse
+      </button>
+    </div>
+    <div class="controls">
+      <div class="speed-control">
+        <label for="speed">Animation Speed:</label>
+        <select id="speed" onchange="setSpeed(this.value)">
+          <option value="1000">Slow</option>
+          <option value="500" selected>Normal</option>
+          <option value="200">Fast</option>
+        </select>
+      </div>
+    </div>
+    <div class="status-bar">
+      <div id="status" class="status">Ready to process</div>
+      <div id="currentState" class="state">State: q0</div>
+      <div id="stepCounter" class="step-counter">Steps: 0</div>
+    </div>
+    <div class="tape-container">
+      <h3>Tape</h3>
+      <div id="tapeContainer" class="tape"></div>
+    </div>
+    <div class="transitions-container">
+      <h3>Transition History</h3>
+      <div id="transitionTable" class="transitions"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
